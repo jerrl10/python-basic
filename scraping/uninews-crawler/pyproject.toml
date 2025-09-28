@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "uninews-crawler"
+version = "0.1.0"
+description = "Crawl university websites for cooperation-related news and export results"
+authors = ["Chang Liu <chang.liu@elva11.se>"]
+readme = "README.md"
+packages = [{ include = "uninews_crawler", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.0"
+beautifulsoup4 = "^4.12.0"
+lxml = "^5.2.0"
+pandas = "^2.3.0"
+openpyxl = "^3.1.0"
+
+[tool.poetry.scripts]
+uninews = "uninews_crawler.cli:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
